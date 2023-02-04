@@ -27,6 +27,18 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+  mongodb:
+    container_name: mongodb
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - mongo
 #  zipkin:
 #    image: openzipkin/zipkin
 #    container_name: zipkin
@@ -110,9 +122,12 @@ services:
 networks:
   postgres:
     driver: bridge
+  mongo:
+    driver: bridge
 #  spring:
 #    driver: bridge
 
 volumes:
   postgres:
   pgadmin:
+  mongo:
