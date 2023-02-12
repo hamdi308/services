@@ -32,3 +32,4 @@ public class FraudCheckHistory {
     private LocalDate createdAt;
 
 }
+

@@ -19,3 +19,4 @@ public class DbSequence {
     @Field("sequence_number")
     int sequence;
 }
+

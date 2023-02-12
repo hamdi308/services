@@ -23,3 +23,4 @@ public class DbSequenceGenr {
         return !Objects.isNull(counter) ? counter.getSequence() : 1;
     }
 }
+
